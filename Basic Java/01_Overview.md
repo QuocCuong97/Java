@@ -6,7 +6,7 @@
 - Các phiên bản **J2** mới lần lượt được đổi tên thành
     - **Java SE**
     - **Java EE** (phiên bản ứng dụng doanh nghiệp)
-    - **J2ME** (phiển bản cho ứng dụng di động)
+    - **J2ME** (phiên bản cho ứng dụng di động)
 - **Java** được đảm bảo có thể "***Write Once, Run Anywhere***"
 - **Java** hiện được sở hữu bởi **Oracle**, với hơn 3 tỷ thiết bị trên thế giới chạy **Java**.
 - **Java** được sử dụng cho mục đích:
@@ -60,7 +60,7 @@
     ```
     $ sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-16/bin/java 100
     ```
-- **B3 :** Kiểm tra lại version :
+- **B4 :** Kiểm tra lại version :
     ```
     $ java --version
     ```
