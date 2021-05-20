@@ -17,102 +17,35 @@
     - Game
     - Database connection
     - .........
-## **2) Tại sao nên sử dụng Java**
-- **Java** hoạt động trên nhiều nền tảng khác nhau (Windows, Mac, Linux, Raspberry Pi,..)
-- **Java** là ngôn ngữ phổ biến nhất thế giới
-- **Java** rất dễ học và dễ sử dụng
+## **2) Đặc trưng cơ bản và điểm nổi bật của Java**
+### **2.1) Đặc trưng cơ bản**
+- Là ngôn ngữ hướng đối tượng
+- Chạy bằng máy ảo **Java**. Chương trình muốn thực thi phải biên dịch ra mã máy, mà mã máy mỗi hệ điều hành là khác nhau như Windows biên dịch dưới dạng file có đuôi `.exe` còn Linux có dạng đuôi `.elf`. Việc **Java** có thể chạy mọi hệ điều hành là do nhà phát triển Sun Microsytems phát triển máy ảo (**JVM**) chịu trách nhiệm việc này.
+
+    <p align=center><img src=https://i.imgur.com/Kgo0Z4Y.png width=60%></p>
+
+- Đa nhiệm – Đa luồng: Java hỗ trợ lập trình đa nhiệm, đa luồng cho phép chạy nhiều tiến trình chạy song song trong một thời điểm và tương tác lẫn nhau.
+- Java bỏ đa kế thừa trong C++ thay bằng sử dụng Interface
+### **2.2) Các điểm nổi bật**
 - **Java** là mã nguồn mở và hoàn toàn miễn phí
-- **Java** bảo mật, nhanh và mạnh mẽ
+- **Java** là ngôn ngữ phổ biến nhất thế giới
 - **Java** có cộng đồng support lớn (khoảng 10.000.000 lập trình viên)
-- **Java** là một ngôn ngữ hướng đối tượng, đưa đến cấu trúc rõ ràng cho các chương trình, cho phép code được tái sử dụng, giảm chi phí phát triển.
-- Vì **Java** cũng gần như **C++** và **C#**, sẽ dễ cho lập trình viên khi chuyển từ **Java** sang các ngôn ngữ khác.
-## **3) Cài đặt Java JDK 16**
-### **3.1) Cài đặt trên Linux**
-#### **3.1.1) Cài đặt trên CentOS/RHEL 7**
-- **B1 :** Download gói cài đặt :
-    ```
-    # wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "https://download.oracle.com/otn-pub/java/jdk/16+36/7863447f0ab643c585b9bdebf67c69db/jdk-16_linux-x64_bin.rpm"
-    ```
-- **B2 :** Cài đặt **JDK 16** vừa download :
-    ```
-    # rpm -Uvh jdk-16_linux-x64_bin.rpm
-    ```
-- **B3 :** Kiểm tra lại version :
-    ```
-    # java --version
-    ```
-    => Output :
-    ```
-    java 16 2021-03-16
-    Java(TM) SE Runtime Environment (build 16+36-2231)
-    Java HotSpot(TM) 64-Bit Server VM (build 16+36-2231, mixed mode, sharing)
-    ```
-#### **3.1.2) Cài đặt trên Ubuntu 20.04**
-- **B1 :** Download gói cài đặt :
-    ```
-    $ wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "https://download.oracle.com/otn-pub/java/jdk/16+36/7863447f0ab643c585b9bdebf67c69db/jdk-16_linux-x64_bin.deb"
-    ```
-- **B2 :** Cài đặt **JDK 16** vừa download :
-    ```
-    $ sudo dpkg -i jdk-16_linux-x64_bin.deb
-    ```
-- **B3 :** Set alternative reference :
-    ```
-    $ sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-16/bin/java 100
-    ```
-- **B4 :** Kiểm tra lại version :
-    ```
-    $ java --version
-    ```
-    => Output :
-    ```
-    java 16 2021-03-16
-    Java(TM) SE Runtime Environment (build 16+36-2231)
-    Java HotSpot(TM) 64-Bit Server VM (build 16+36-2231, mixed mode, sharing)
-    ```
-### **3.2) Cài đặt trên Windows**
-- **B1 :** Download **Java JDK 16** tại [link](https://download.oracle.com/otn-pub/java/jdk/16+36/7863447f0ab643c585b9bdebf67c69db/jdk-16_windows-x64_bin.exe).
-- **B2 :** Chạy file `jdk-16_windows-x64_bin.exe`, chọn ***Next*** :
+- Độc lập phần cứng và hệ điều hành: **Java** được thiết kế để biên dịch code thành bytecode và bytecode sẽ chạy trên môi trường thực thi. Nên chương trình **Java** có thể chạy trên nhiều thiết bị, nhiều hệ điều hành khác nhau.
 
-    <p align=center><img src="https://i.imgur.com/eQKt4Bd.png" width=50%></p>
+    <p align=center><img src=https://i.imgur.com/zL8Cdrz.png width=60%></p>
 
-- **B3 :** Tại cửa sổ **Destination Folder**, chọn ***Next*** để chọn đường dẫn mặc định :
+- Mạnh mẽ: quá trình cấp phát, giải phóng bộ nhớ thực hiện tự động. Không sử dụng con trỏ hoặc phép toán con trỏ.
+- Bảo mật: Do Java phải biên dịch qua máy ảo Java (JVM) nên sẽ được bảo mật cao hơn khi mọi đối tượng phải qua JVM mới đến hệ điều hành.
 
-    <p align=center><img src="https://i.imgur.com/9FHTlqg.png" width=50%></p>
+    <p align=center><img src=https://i.imgur.com/JwbGPcb.png width=60%></p>
 
-- **B4 :** Chọn ***Close*** để hoàn tất quá trình cài đặt :
+- Phân tán: Java hỗ trợ lập trình cho hệ thống phân tán như client-server, RMI… bằng Java Web, UDP, TCP
+## **3) Phân biệt JDK, JRE và JVM**
+- **JVM (Java Virtual Machine)** là môi trường dùng để chạy ứng dụng được viết bằng ngôn ngữ lập trình **Java**. **JVM** giúp **Java** có thể chạy nhiều nền tảng (Platform) khác nhau, mỗi nền tảng sẽ có Platform tương ứng như **JVM** giành cho Linux, Mac, Window… nhưng cơ chế hoạt động đều như nhau nên khi ta viết ứng dụng **Java** trên Window vẫn có thể chạy được trên Linux, Mac và ngược lại.
+- **JRE (Java Runtime Enviroment)** bao gồm các thư viện, **JVM** và những thành phần bổ sung để chạy những ứng dụng được viết bằng Java. Những máy tính của người dùng bình thường chỉ cần cài đặt **JRE** là đủ chạy ứng dụng Java Desktop (được viết từ những thư viện AWT, Swing hay JavaFX).
+- **JDK (Java Development Kit)** giành cho các lập trình viên **Java** là tập hợp **JRE** và những công cụ cần thiết để phát triển ứng dụng bằng **Java**. Ví dụ như trình biên dịch `javac` dùng để biên dịch java thành file bytecode `.class` .
 
-    <p align=center><img src="https://i.imgur.com/HoFl8CU.png" width=50%></p>
-
-- **B5 :** Truy cập ***Control Panel*** > ***System and Security*** > ***System*** > ***Advanced System Settings*** :
-
-    <p align=center><img src="https://i.imgur.com/UBxLrJD.png" width=70%></p>
-
-- **B6 :** Trong tab **Advanced**, chọn ***Environment Variables...*** :
-
-    <p align=center><img src="https://i.imgur.com/jZH58p8.png" width=50%></p>
-
-- **B7 :** Tại cửa sổ **Environment Variables**, thay đổi **Path** của Windows :
-
-    <p align=center><img src="https://i.imgur.com/PcJhNau.png" width=50%></p>
-
-- **B8 :** Chọn ***New*** để thêm đường dẫn cho **Java** :
-
-    <p align=center><img src="https://i.imgur.com/HMTlLBw.png" width=50%></p>
-
-- **B9 :** Thêm đường dẫn cài đặt **Java** `C:\Program Files\Java\jdk-16\bin`, sau đó chọn ***OK*** để hoàn tất :
-
-    <p align=center><img src="https://i.imgur.com/wlP3gf3.png" width=50%></p>
-
-- **B10 :** Kiểm tra lại version **Java** đã cài đặt :
-    ```
-    > java --version
-    ```
-    ```
-    java 16 2021-03-16
-    Java(TM) SE Runtime Environment (build 16+36-2231)
-    Java HotSpot(TM) 64-Bit Server VM (build 16+36-2231, mixed mode, sharing)
-    ```
-
+    <p align=center><img src=https://i.imgur.com/VWN5xA3.png width=80%></p>
+    
     
     
