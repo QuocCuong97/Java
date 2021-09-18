@@ -121,9 +121,10 @@
 ## **7) Dependency Trong Maven**
 - Dependency chính là cách import thư viện vào project thông qua Maven
 - Cơ chế import thư viện thông qua maven.
-    - Ví dụ để import thư viện redis, bình thường ta sẽ dowload file redis.jar về rồi buildpath trong eclipse, nhưng với thẻ dependency, Maven sẽ tự động dowload thư viện đó về thư mục ~/.m2 trên máy local và buildpath vào project.
+    - Ví dụ để import thư viện `redis`, bình thường ta sẽ dowload file `redis.jar` về rồi buildpath trong eclipse, nhưng với thẻ `<dependency>`, **Maven** sẽ tự động dowload thư viện đó về thư mục `~/.m2` trên máy local và buildpath vào project.
     - http://mvnrepository.com/artifact/redis.clients/jedis.
-    - Thư mục ~/.m2/repository Sẽ chứa tất cả các thư viện mà Maven dowload về từ server center.
+    - Thư mục `~/.m2/repository` sẽ chứa tất cả các thư viện mà Maven dowload về từ server center.
+- **Repository** : Là một kho chứa các dependencies ( các thư viện sử dụng trong project ). Khi thực hiện build project sử dụng **Maven**, thì các thư viện được khai báo trong file pom.xml sẽ được download tự động tại kho chứa này: https://maven.apache.org/guides/introduction/introduction-to-repositories.html
 - Các Dependency sẽ tự động được buildpath trong Eclipse.
     ```xml
     <dependency>
@@ -156,14 +157,14 @@
 ## **9) Demo Project**
 - **B1 :** Khởi tạo một project :
     ```
-    mvn archetype:generate -DgroupId=com.mycompany.app
-        -DartifactId=my-app
-        -DarchetypeArtifactId=maven-archetype-quickstart
-        -DinteractiveMode=false
+    # mvn archetype:generate -DgroupId=developer -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
     ```
-    - Nội dung file `Main.java` :
+    - Thư mục của project được tạo ra có cấu trúc như sau :
+
+        <p align=center><img src=https://i.imgur.com/jnEcRJs.png width=40%></p>
+    - Nội dung file `App.java` :
         ```java
-        package com.mycompany.app;
+        package developer;
 
         /**
          * Hello world!
@@ -182,10 +183,10 @@
     <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
       <modelVersion>4.0.0</modelVersion>
-      <groupId>com.mycompany.app</groupId>
+      <groupId>developer</groupId>
       <artifactId>my-app</artifactId>
       <packaging>jar</packaging>
-      <version>1.0</version>
+      <version>1.0-SNAPSHOT</version>
       <name>my-app</name>
       <url>http://maven.apache.org</url>
       <dependencies>
@@ -209,7 +210,7 @@
                 <manifest>
                   <addClasspath>true</addClasspath>
                   <classpathPrefix>lib/</classpathPrefix>
-                  <mainClass>com.mycompany.app.App</mainClass>
+                  <mainClass>developer.App</mainClass>
                 </manifest>
               </archive>
             </configuration>
@@ -220,10 +221,11 @@
     ```
 - **B3 :** Build project :
     ```
-    mvn package
+    # mvn package
     ```
+    <img src=https://i.imgur.com/aCGmJ6F.png>
 - **B4 :** Run project :
     ```
-    java -jar [file_dot_jar]
+    # java -jar target/my-app-1.0-SNAPSHOT.jar
     ```
-    
+    <img src=https://i.imgur.com/BO0Znfz.png>
