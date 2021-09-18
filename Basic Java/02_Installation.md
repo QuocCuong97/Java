@@ -1,5 +1,5 @@
 # Cài đặt Java
-## **1) Cài đặt Java JDK 16**
+## **1) Cài đặt Java JDK 17**
 ### **1.1) Cài đặt trên Linux**
 #### **1.1.1) Cài đặt trên CentOS/RHEL 7**
 - **B1 :** Download gói cài đặt :
@@ -44,18 +44,18 @@
     Java HotSpot(TM) 64-Bit Server VM (build 16+36-2231, mixed mode, sharing)
     ```
 ### **1.2) Cài đặt trên Windows**
-- **B1 :** Download **Java JDK 16** tại [link](https://www.oracle.com/java/technologies/javase-downloads.html).
-- **B2 :** Chạy file `jdk-16_windows-x64_bin.exe`, chọn ***Next*** :
+- **B1 :** Download **Java JDK 17** tại [link](https://www.oracle.com/java/technologies/javase-downloads.html).
+- **B2 :** Chạy file `jdk-17_windows-x64_bin.exe`, chọn ***Next*** :
 
-    <p align=center><img src="https://i.imgur.com/eQKt4Bd.png" width=50%></p>
+    <p align=center><img src="https://i.imgur.com/JAW4Ves.png" width=50%></p>
 
 - **B3 :** Tại cửa sổ **Destination Folder**, chọn ***Next*** để chọn đường dẫn mặc định :
 
-    <p align=center><img src="https://i.imgur.com/9FHTlqg.png" width=50%></p>
+    <p align=center><img src="https://i.imgur.com/XdrlqPr.png" width=50%></p>
 
 - **B4 :** Chọn ***Close*** để hoàn tất quá trình cài đặt :
 
-    <p align=center><img src="https://i.imgur.com/HoFl8CU.png" width=50%></p>
+    <p align=center><img src="https://i.imgur.com/c28MAG5.png" width=50%></p>
 
 - **B5 :** Truy cập ***Control Panel*** > ***System and Security*** > ***System*** > ***Advanced System Settings*** :
 
@@ -75,14 +75,14 @@
 
 - **B9 :** Thêm đường dẫn cài đặt **Java** `C:\Program Files\Java\jdk-16\bin`, sau đó chọn ***OK*** để hoàn tất :
 
-    <p align=center><img src="https://i.imgur.com/wlP3gf3.png" width=50%></p>
+    <p align=center><img src="https://i.imgur.com/xl81n4Y.png" width=50%></p>
 
 - **B10 :** Kiểm tra lại version **Java** đã cài đặt :
     ```
     > java --version
     ```
     ```
-    java 16 2021-03-16
-    Java(TM) SE Runtime Environment (build 16+36-2231)
-    Java HotSpot(TM) 64-Bit Server VM (build 16+36-2231, mixed mode, sharing)
+    java 17 2021-09-14 LTS
+    Java(TM) SE Runtime Environment (build 17+35-LTS-2724)
+    Java HotSpot(TM) 64-Bit Server VM (build 17+35-LTS-2724, mixed mode, sharing)
     ```
